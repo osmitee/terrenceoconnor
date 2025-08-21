@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrence O’Connor</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* vertically center main content */
+            align-items: center;
+            /* horizontally center main content */
+            background: #fff;
+            position: relative;
+            /* for absolute bottom-right positioning */
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            text-transform: lowercase;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 600px;
+            /* width of the "box" */
+            padding: 1.5rem;
+            /* inner spacing of the box */
+            text-align: left;
+            /* text alignment inside the box */
+            border: 1px solid #ddd;
+            /* optional: subtle border for box look */
+            border-radius: 5px;
+            /* optional rounded corners */
+            /* optional light background */
+            text-transform: lowercase;
+            margin: 0 10% 0 10%;
+            overflow: scroll;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            text-align: right;
+        }
+
+        .bottom-right a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9rem;
+            margin: 0.2rem 0;
+                }
+
+        .bottom-right a.active {
+            font-weight: bold;
+        }
+
+        .socials {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.6rem;
+            justify-content: flex-end;
+        }
+
+        .socials a {
+            font-size: 1.2rem;
+            color: black;
+            text-decoration: none;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 1000px) {
+    .text {
+        max-width: 90%;
+        max-height: 50vh;         /* narrower box on small screens */
+        padding: 1rem;          /* inner spacing */
+        margin-bottom: 10rem; 
+        overflow: scroll;   /* space at bottom so it ends above bottom-right */
+    }
+
+    h1 {
+        font-size: 1.1rem;      /* slightly smaller heading */
+    }
+
+    .bottom-right {
+        font-size: 0.8rem;      /* slightly smaller text if needed */
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Centered Name -->
+    <h1><a href="index.html">terrence o’connor</a></h1>
+
+    <!-- Centered Text Box -->
+    <div class="text">
+        Originally from Massachusetts, Terrence (Terry) O’Connor began his career in New York City working at digital
+        agency,
+        Vayner Media, where he focused primarily on promotional strategy for brand campaigns. Simultaneously, Terry
+        began
+        helping his partner Benito Skinner (“Benny Drama”) build his career through his work on social media. With Terry
+        behind
+        the camera, Benny quickly became a viral sensation on Instagram and TikTok, and the couple moved to LA in March
+        of 2020.
+        A few months later, Terry went freelance and started his own business as a multi-faceted creative which has
+        since
+        evolved into promotional strategy, videography, photography, creative direction and producing social content.
+        Utilizing
+        the skills he had gained from his work with Benny, his innate knowledge of the internet, and love for all things
+        pop
+        culture, he began to work with artists and their teams across the entertainment industry where he has since
+        garnered the
+        attention of millions of viewers on TikTok for his clients, including; Charli XCX, A24, Caroline Polacheck, Noah
+        Cyrus,
+        HAIM, Orville Peck, Capitol Records, and more.
+        Terry’s goals for the future are to continue focusing where he does his best work — having a unique ability to
+        work
+        directly with the artist, management, and label to marry the artist’s vision to their team’s marketing strategy
+        with his
+        deep knowledge of how to gather and retain the attention of audiences around the world.
+    </div>
+
+    <!-- Bottom-right Links, Socials, and Contact -->
+    <div class="bottom-right">
+        <a href="index.html">home</a>
+
+        <a href="about.html"><b>about</b></a>
+        <a href="social.html">social content</a>
+        <a href="photography.html">photography</a>
+        <a href="video.html">video</a>
+
+        <div class="socials">
+            <a href="https://www.instagram.com/terrencefoconnor/?hl=en" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@terrencefoconnor?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/tf_oconnor?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <a class="contact-btn" href="mailto:terrence@goodworldco.com">contact</a>
+    </div>
+</body>
+
+</html>

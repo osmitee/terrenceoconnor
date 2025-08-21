@@ -4,9 +4,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: white;
   position: relative;
   overflow: hidden;
+  font-family: arial;
 }
 
 .iphone-container {
@@ -61,4 +62,60 @@ body {
 .no-tilt .iphone-wrapper {
   transform: none !important;
   cursor: default;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: lowercase;
+  margin-top: 40vh;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  text-align: right;
+}
+
+.bottom-right a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.bottom-right a.active {
+  font-weight: bold;
+}
+
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+  /* spacing between icons */
+  justify-content: flex-end;
+  /* aligns them to the right */
+}
+
+.socials a {
+  font-size: 1.2rem;
+  color: black;
+  text-decoration: none;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.3rem 0.8rem;
+  /* adjust padding to fit neatly */
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
 }

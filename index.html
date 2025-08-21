@@ -2,23 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />    <title>terrence o'connor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrence O’Connor</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: normal;
+            text-transform: lowercase;
+            margin-top: 40vh;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            text-align: right;
+            z-index: 10;
+        }
+
+        .bottom-right a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9rem;
+            margin: 0.2rem 0;
+        }
+
+        .bottom-right a.active {
+            font-weight: bold;
+        }
+
+        .socials {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.6rem;
+            /* spacing between icons */
+            justify-content: flex-end;
+            /* aligns them to the right */
+            
+        }
+
+        .socials a {
+            font-size: 1.2rem;
+            color: black;
+            text-decoration: none;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.3rem 0.8rem;
+            /* adjust padding to fit neatly */
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="iphone-wrapper">
-        <div class="iphone-container">
-            <div class="clip-wrapper">
-                <video src="assets/tiktok-1.MP4" controls></video>
-                <video src="assets/tiktok-2.MP4" controls></video>
-                <video src="assets/tiktok-3.MP4" controls></video>
-            </div>
+    <h1>terrence o’connor</h1>
+
+    <div class="bottom-right">
+        <a href="about.html">about</a>
+        <a href="social.html">social content</a>
+        <a href="photography.html">photography</a>
+        <a href="video.html">video</a>
+
+        <div class="socials">
+            <a href="https://www.instagram.com/terrencefoconnor/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@terrencefoconnor?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/tf_oconnor?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-        <img class="iphone" src="assets/iphone-bg.png" alt="iPhone Frame" />
+
+        <a class="contact-btn" href="mailto:terrence@goodworldco.com">contact</a>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
