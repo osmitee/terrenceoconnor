@@ -2,99 +2,121 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terrence O’Connor</title>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: #fff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrence O’Connor</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
 
-        h1 {
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: normal;
-            text-transform: lowercase;
-            margin-top: 40vh;
-        }
+    /* Container to center videos vertically */
+    .center-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .bottom-right {
-            position: absolute;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            text-align: right;
-            z-index: 10;
-        }
+    /* Scroll container for videos */
+    .video-scroll {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem;
+    }
 
-        .bottom-right a {
-            display: block;
-            text-decoration: none;
-            color: black;
-            font-size: 0.9rem;
-            margin: 0.2rem 0;
-        }
+    .video-scroll iframe {
+      flex: 0 0 auto;
+      width: 400px;
+      height: 225px;
+      border: none;
+      scroll-snap-align: start;
+      border-radius: 8px;
+    }
 
-        .bottom-right a.active {
-            font-weight: bold;
-        }
+    .bottom-right {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      text-align: right;
+      z-index: 10;
+    }
 
-        .socials {
-            margin-top: 1rem;
-            display: flex;
-            gap: 0.6rem;
-            /* spacing between icons */
-            justify-content: flex-end;
-            /* aligns them to the right */
-            
-        }
+    .bottom-right a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      font-size: 0.9rem;
+      margin: 0.2rem 0;
+    }
 
-        .socials a {
-            font-size: 1.2rem;
-            color: black;
-            text-decoration: none;
-        }
+    .bottom-right a.active {
+      font-weight: bold;
+    }
 
-        .contact-btn {
-            display: inline-block;
-            margin-top: 0.6rem;
-            padding: 0.3rem 0.8rem;
-            /* adjust padding to fit neatly */
-            border: 1px solid black;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: black;
-            text-decoration: none;
-            text-align: center;
-        }
-    </style>
+    .socials {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.6rem;
+      justify-content: flex-end;
+    }
+
+    .socials a {
+      font-size: 1.2rem;
+      color: black;
+      text-decoration: none;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid black;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>terrence o’connor</h1>
 
-    <div class="bottom-right">
-        <a href="about.html">about</a>
-        <a href="social.html">social content</a>
-        <a href="photography.html">photography</a>
-        <a href="video.html">video</a>
-
-        <div class="socials">
-            <a href="https://www.instagram.com/terrencefoconnor/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@terrencefoconnor?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://x.com/tf_oconnor?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
-
-        <a class="contact-btn" href="mailto:terrence@goodworldco.com">contact</a>
+  <!-- Centered horizontal video scroll -->
+  <div class="center-container">
+    <div class="video-scroll">
+      <iframe src="https://www.youtube.com/embed/1UpoZpMBM9Y" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/2tvW25Qu5WE" allowfullscreen></iframe>
     </div>
+  </div>
+
+  <!-- Bottom right links + socials + contact -->
+  <div class="bottom-right">
+    <a href="about.html">about</a>
+    <a href="social.html">social content</a>
+    <a href="photography.html">photography</a>
+    <a href="video.html">video</a>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/terrencefoconnor/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@terrencefoconnor?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://x.com/tf_oconnor?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <a class="contact-btn" href="mailto:terrence@goodworldco.com">contact</a>
+  </div>
+
 </body>
 
 </html>
