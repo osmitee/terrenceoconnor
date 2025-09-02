@@ -1,100 +1,815 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terrence O’Connor</title>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: #fff;
+    <meta charset="utf-8" />
+    <noscript>
+        <style>
+            #container {
+                display: none;
+            }
+        </style>
+    </noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preload"
+        href="/_runtimes/sites-runtime.77da1ae7640954eb8c914594ec1b12265532baee42984a5f68d5b3f0452aeaa2.js" as="script"
+        crossorigin />
+    <link rel="preload" href="/_json/db317c57-3aa5-47c7-b46c-a51578d8315e/_index.json" as="fetch" />
+    <style id="reset-css">
+        @layer figreset, figoverridable, reset, theme, base, figutils, components, utilities;
+
+        @layer figreset {
+            :root {
+                --100dvw: 100vw;
+                --100dvh: 100vh;
+                --banner-height: 48px;
+                --full-height-with-banner: calc(100dvh - var(--banner-height));
+                font-synthesis: none;
+                text-align: left;
+
+                button {
+                    text-align: left
+                }
+            }
+
+            @supports (width: 100dvw) {
+                :root {
+                    --100dvw: 100dvw;
+                    --100dvh: 100dvh
+                }
+            }
         }
 
-        h1 {
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: normal;
-            text-transform: lowercase;
-            margin-top: 40vh;
+        .wrapper-with-banner .min-h-screen {
+            min-height: var(--full-height-with-banner)
         }
 
-        .bottom-right {
-            position: absolute;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            text-align: right;
-            z-index: 10;
+        .wrapper-with-banner .h-screen {
+            height: var(--full-height-with-banner)
         }
 
-        .bottom-right a {
-            display: block;
-            text-decoration: none;
-            color: black;
-            font-size: 0.9rem;
-            margin: 0.2rem 0;
+        @layer figreset {
+            :root {
+                font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji")
+            }
+
+            *,
+            *:before,
+            *:after {
+                box-sizing: border-box
+            }
+
+            html {
+                -webkit-text-size-adjust: 100%;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-font-smoothing: antialiased;
+                width: 100%
+            }
+
+            html: has(#responsive-scaler) {
+                scrollbar-width: none;
+                -ms-overflow-style: none
+            }
+
+            body {
+                margin: 0;
+                width: 100%
+            }
+
+            body: has([data-page-overflowx='hidden']) {
+                overflow-x: hidden
+            }
+
+            body: has([data-page-overflowx='auto']) {
+                overflow-x: auto
+            }
+
+            #container {
+                width: 100%
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none
+            }
+
+            button {
+                border: none;
+                background: none;
+                padding: 0
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                font-size: inherit;
+                font-weight: inherit
+            }
+
+            blockquote,
+            dl,
+            dd,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            hr,
+            figure,
+            p,
+            pre {
+                margin: 0
+            }
+
+            ol,
+            ul,
+            menu {
+                list-style: none;
+                margin: 0;
+                padding-inline-start: 1.5em
+            }
+
+            #container .textContents {
+                color: #ffffff00
+            }
+
+            #container .textClip {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent !important
+            }
+
+            #container .textClip>* {
+                -webkit-text-fill-color: initial
+            }
+
+            #container .embed {
+                border: none
+            }
+
+            #container .marquee-container {
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                width: var(--width);
+                transform: var(--transform);
+
+                &:hover div {
+                    animation-play-state: var(--pause-on-hover)
+                }
+
+                &:active div {
+                    animation-play-state: var(--pause-on-click)
+                }
+            }
+
+            #container .marquee {
+                flex: 0 0 auto;
+                min-width: var(--min-width);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+                animation-delay: var(--delay);
+                animation-direction: var(--direction);
+                animation-timing-function: var(--timing-function)
+            }
+
+            #container .marquee.reduced-motion {
+                @media (prefers-reduced-motion:reduce) {
+                    animation: none
+                }
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0%)
+                }
+
+                100% {
+                    transform: translateX(-100%)
+                }
+            }
+
+            #container .marquee-initial-child-container {
+                flex: 0 0 auto;
+                display: flex;
+                min-width: auto;
+                flex-direction: row;
+                align-items: center
+            }
+
+            #container .marquee-child {
+                transform: var(--transform)
+            }
+
+            .code-behavior-wrapper>* {
+                width: 100%;
+                height: 100%
+            }
+
+            .bypass-link {
+                position: fixed;
+                top: 16px;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                pointer-events: none
+            }
+
+            .bypass-link:focus-within {
+                opacity: 1;
+                z-index: 10000
+            }
+
+            .bypass-link>a {
+                background-color: #000;
+                color: #fff;
+                border: 1px solid #fff;
+                padding: 12px 16px;
+                font-size: 16px;
+                border-radius: 12px;
+                pointer-events: auto
+            }
         }
 
-        .bottom-right a.active {
-            font-weight: bold;
-        }
+        @layer figutils {
+            .textContents ul>li: before {
+                content: '\2022';
+                margin-left: -1.5em;
+                display: inline-block;
+                text-align: center;
+                width: 1.5em;
+                -webkit-background-clip: var(--list-marker-background-clip);
+                -webkit-text-fill-color: var(--list-marker-text-fill-color);
+                background-clip: var(--list-marker-background-clip);
+                background-image: var(--list-marker-background-image);
+                color: var(--list-marker-color);
+                font-size: var(--list-marker-font-size);
+                line-height: var(--list-marker-line-height);
+                mix-blend-mode: var(--list-marker-mix-blend-mode);
+                vertical-align: var(--list-marker-vertical-align)
+            }
 
-        .socials {
-            margin-top: 1rem;
-            display: flex;
-            gap: 0.6rem;
-            /* spacing between icons */
-            justify-content: flex-end;
-            /* aligns them to the right */
-            
-        }
+            .textContents ol>li: :marker {
+                color: var(--list-marker-color);
+                font-size: var(--list-marker-font-size);
+                line-height: var(--list-marker-line-height);
+                vertical-align: var(--list-marker-vertical-align)
+            }
 
-        .socials a {
-            font-size: 1.2rem;
-            color: black;
-            text-decoration: none;
-        }
+            .textContents .adjustLetterSpacing:after {
+                content: '';
+                margin-left: calc(var(--letter-spacing) * -1)
+            }
+             .bottom-right {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        text-align: right;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.574);
+        padding: 2%;
+        border-radius: 10px;
+        backdrop-filter: blur(8px);
+      }
+      
+      .bottom-right a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        font-size: 0.9rem;
+        margin: 0.2rem 0;
 
-        .contact-btn {
-            display: inline-block;
-            margin-top: 0.6rem;
-            padding: 0.3rem 0.8rem;
-            /* adjust padding to fit neatly */
-            border: 1px solid black;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: black;
-            text-decoration: none;
-            text-align: center;
+      }
+      
+      .bottom-right a.active {
+        font-weight: bold;
+      }
+      
+      .socials {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.6rem;
+        /* spacing between icons */
+        justify-content: flex-end;
+        /* aligns them to the right */
+        z-index: 10;
+      }
+      
+      .socials a {
+        font-size: 1.2rem;
+        color: black;
+        text-decoration: none;
+      }
+      
+      .contact-btn {
+        display: inline-block;
+        margin-top: 0.6rem;
+        padding: 0.3rem 0.8rem;
+        /* adjust padding to fit neatly */
+        border: 1px solid black;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        background-color: white;
+      }
+
         }
     </style>
+    <style id="font-faces-0"></style>
+    <style id="body-background-color">
+        body:has([data-breakpoint-id="node-1_2"]) {
+            background-color: #FFF
+        }
+    </style>
+    <style id="ssr-css">
+        #container .css-md8qju {
+            transition-property: transform;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+        }
+
+        #container .css-r91w0a {
+            transform: translateY(var(--banner-height));
+        }
+
+        #container .css-vu19p2 {
+            height: var(--full-height-with-banner);
+        }
+
+        #container .css-7tvcgb {
+            position: fixed;
+        }
+
+        #container .css-324jje {
+            inset: 0;
+            overflow: auto;
+        }
+
+        #container .css-vh2lqg {
+            width: var(--viewport-width-scaled);
+            min-height: var(--viewport-height-scaled);
+            height: 100%;
+            top: 0px;
+        }
+
+        #container .css-tzn6qh {
+            display: block;
+            position: absolute;
+        }
+
+        #container .css-6gkcj1 {
+            transform-origin: top left;
+            --max-layout-width: 2048px;
+            --min-layout-width: 320px;
+            --max-font-size: 288px;
+            --min-font-size: 6px;
+            --viewport-width-scaled: calc(var(--100dvw) / var(--viewport-scale));
+            --viewport-height-scaled: calc(var(--100dvh) / var(--viewport-scale));
+            --content-width-scaled: calc(var(--content-width-unscaled) / var(--viewport-scale));
+            --content-margin-x-scaled: max(calc((var(--viewport-width) - var(--max-layout-width)) / var(--viewport-scale) / 2), 0px);
+        }
+
+        #container .css-vf8mzy {
+            position: relative;
+            display: block;
+        }
+
+        #container .css-j6ldtg {
+            min-width: var(--content-min-width);
+            width: 100%;
+            height: var(--content-min-height);
+        }
+
+        #container .css-8us9vh {
+            --content-width: calc(var(--content-width-scaled, 100%) - (var(--content-margin-x-scaled, 0px) * 2));
+            --content-margin: 0 var(--content-margin-x-scaled, 0);
+            --content-min-width: calc(max(var(--viewport-width-scaled, 100%), 1273px) - (var(--content-margin-x-scaled, 0px) * 2));
+            --content-min-height: max(var(--viewport-height-scaled, var(--100dvh)), 873px);
+            overflow: clip;
+            background-color: #FFF;
+        }
+
+        #container .css-j9f0op {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container .css-qzop8u {
+            width: 1414px;
+            height: auto;
+            left: 0;
+            right: auto;
+            top: 0;
+            bottom: 0;
+        }
+
+        #container .css-roiesn {
+            position: absolute;
+            display: block;
+        }
+
+        #container .css-hu2nqk {
+            overflow-x: auto;
+            overflow-y: clip;
+        }
+
+        #container .css-id131o {
+            width: auto;
+            height: auto;
+            left: 0;
+            right: -2334.108px;
+            top: 0;
+            bottom: 0;
+        }
+
+        #container .css-v2c1sn {
+            position: absolute;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 25.19px;
+        }
+
+        #container .css-h5pewn {
+            align-content: flex-start;
+            overflow: clip;
+        }
+
+        #container .css-n6pdts {
+            width: 453.0448913574219px;
+            height: 254.8377685546875px;
+        }
+
+        #container .css-wc1msa {
+            position: relative;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        #container .css-trglf0 {
+            position: absolute;
+        }
+
+        #container .css-r0azwh {
+            inset: 0px;
+            pointer-events: none;
+        }
+
+        #container .css-9unj7x {
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+
+        #container .css-ez8men {
+            max-width: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #container .css-1tfwfz {
+            width: 254.83773803710938px;
+            height: 254.83773803710938px;
+        }
+
+        #container .css-cp3kqz {
+            width: 254.8377685546875px;
+            height: 318.5472106933594px;
+        }
+    </style>
+    <script>
+        window.__serverRenderedCSSClassNames = {
+            "css-md8qju": "{\"transitionProperty\":\"transform\",\"transitionDuration\":\"0.2s\",\"transitionTimingFunction\":\"ease-in-out\"}",
+            "css-r91w0a": "{\"transform\":\"translateY(var(--banner-height))\"}",
+            "css-vu19p2": "{\"height\":\"var(--full-height-with-banner)\"}",
+            "css-7tvcgb": "{\"position\":\"fixed\"}",
+            "css-324jje": "{\"inset\":\"0\",\"overflow\":\"auto\"}",
+            "css-vh2lqg": "{\"width\":\"var(--viewport-width-scaled)\",\"minHeight\":\"var(--viewport-height-scaled)\",\"height\":\"100%\",\"top\":\"0px\"}",
+            "css-tzn6qh": "{\"display\":\"block\",\"position\":\"absolute\"}",
+            "css-6gkcj1": "{\"transformOrigin\":\"top left\",\"--max-layout-width\":\"2048px\",\"--min-layout-width\":\"320px\",\"--max-font-size\":\"288px\",\"--min-font-size\":\"6px\",\"--viewport-width-scaled\":\"calc(var(--100dvw) / var(--viewport-scale))\",\"--viewport-height-scaled\":\"calc(var(--100dvh) / var(--viewport-scale))\",\"--content-width-scaled\":\"calc(var(--content-width-unscaled) / var(--viewport-scale))\",\"--content-margin-x-scaled\":\"max(calc((var(--viewport-width) - var(--max-layout-width)) / var(--viewport-scale) / 2), 0px)\"}",
+            "css-vf8mzy": "{\"position\":\"relative\",\"display\":\"block\"}",
+            "css-j6ldtg": "{\"minWidth\":\"var(--content-min-width)\",\"width\":\"100%\",\"height\":\"var(--content-min-height)\"}",
+            "css-8us9vh": "{\"--content-width\":\"calc(var(--content-width-scaled, 100%) - (var(--content-margin-x-scaled, 0px) * 2))\",\"--content-margin\":\"0 var(--content-margin-x-scaled, 0)\",\"--content-min-width\":\"calc(max(var(--viewport-width-scaled, 100%), 1273px) - (var(--content-margin-x-scaled, 0px) * 2))\",\"--content-min-height\":\"max(var(--viewport-height-scaled, var(--100dvh)), 873px)\",\"overflow\":\"clip\",\"backgroundColor\":\"#FFF\"}",
+            "css-j9f0op": "{\"width\":\"100%\",\"height\":\"100%\"}",
+            "css-qzop8u": "{\"width\":1414,\"height\":\"auto\",\"left\":\"0\",\"right\":\"auto\",\"top\":\"0\",\"bottom\":\"0\"}",
+            "css-roiesn": "{\"position\":\"absolute\",\"display\":\"block\"}",
+            "css-hu2nqk": "{\"overflowX\":\"auto\",\"overflowY\":\"clip\"}",
+            "css-id131o": "{\"width\":\"auto\",\"height\":\"auto\",\"left\":\"0\",\"right\":\"-2334.108px\",\"top\":\"0\",\"bottom\":\"0\"}",
+            "css-v2c1sn": "{\"position\":\"absolute\",\"paddingTop\":25.19,\"paddingBottom\":25.19,\"paddingLeft\":25.19,\"paddingRight\":25.19,\"boxSizing\":\"border-box\",\"display\":\"flex\",\"justifyContent\":\"flex-start\",\"alignItems\":\"flex-start\",\"flexWrap\":\"wrap\",\"gap\":10}",
+            "css-h5pewn": "{\"alignContent\":\"flex-start\",\"overflowX\":\"clip\",\"overflowY\":\"clip\"}",
+            "css-n6pdts": "{\"width\":453.0448913574219,\"height\":254.8377685546875}",
+            "css-wc1msa": "{\"position\":\"relative\",\"flexShrink\":0,\"display\":\"block\"}",
+            "css-trglf0": "{\"position\":\"absolute\"}",
+            "css-r0azwh": "{\"inset\":0,\"pointerEvents\":\"none\"}",
+            "css-9unj7x": "{\"objectFit\":\"cover\",\"objectPosition\":\"50% 50%\"}",
+            "css-ez8men": "{\"maxWidth\":\"none\",\"width\":\"100%\",\"height\":\"100%\"}",
+            "css-1tfwfz": "{\"width\":254.83773803710938,\"height\":254.83773803710938}",
+            "css-cp3kqz": "{\"width\":254.8377685546875,\"height\":318.5472106933594}"
+        }
+    </script>
+    <meta id="meta-bkauwd" name="description" content="Created with Figma">
+    <meta id="meta-yw3oin" name="robots" content="noindex">
+    <title id="title-5cwc23">Terrence O'Connor</title>
 </head>
 
 <body>
-    <h1>terrence o’connor</h1>
+    <script data-template-id="country-code">
+        window.__cf_country = "US"
+    </script>
+    <script type="module">
+        import { SitesRuntime } from '/_runtimes/sites-runtime.77da1ae7640954eb8c914594ec1b12265532baee42984a5f68d5b3f0452aeaa2.js';
+        const sitesRuntime = new SitesRuntime({
+            container: document.getElementById('container'),
+            env: 'published',
+            bundleId: 'db317c57-3aa5-47c7-b46c-a51578d8315e',
 
+            loadComponentsOverNetwork: true,
+            assetsVersion: 'v11',
+            fontsVersion: 'v1',
+            videosVersion: 'v1',
+            codeComponentsVersion: 'v1',
+            wasServerRendered: true,
+            withBaseStyles: true,
+            reportingDomain: "https://www.figma.com",
+            bundleCreationDate: '2025-09-02 18:17:45 UTC',
+            isFigmake: false,
+        });
+    </script>
+    <div id="container">
+        <div class="css-vf8mzy css-j6ldtg css-8us9vh" data-page-overflowx="hidden" data-breakpoint-id="node-1_2"
+            data-breakpoint="true" data-width="1273" data-height="873">
+            <div class="css-qzop8u css-roiesn css-hu2nqk">
+                <div class="css-id131o css-v2c1sn css-h5pewn">
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/troye1.png"
+                            srcSet="//photography/troye1.png 1052w, //photography/troye1.png?w=512 512w, /photography/troye1.png?w=1024 1024w"
+                            sizes="453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/troye2.png"
+                            srcSet="/photography/troye2.png 688w, /photography/troye2.png?w=512 512w"
+                            sizes="453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli1.png"
+                            srcSet="/photography/charli1.png 1286w, /photography/troye3.png?w=512 512w, /photography/charli1.png?w=1024 1024w"
+                            sizes="453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli2.png"
+                            srcSet="/photography/charli2.png 1290w, //photography/charli2.png?w=512 512w, /photography/charli2.png?w=1024 1024w"
+                            sizes="auto,453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli3.png"
+                            srcSet="/photography/charli3.png 940w, /photography/charli3.png?w=512 512w"
+                            sizes="auto,453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli4.png"
+                            srcSet="/photography/charli4.png 1284w, /photography/charli4.png?w=512 512w, /photography/charli4.png?w=1024 1024w"
+                            sizes="auto,453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli5.png"
+                            srcSet="/photography/charli5.png 1000w, /photography/charli5.png?w=512 512w"
+                            sizes="auto,453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli6.png"
+                            srcSet="/photography/charli6.png 1004w, //photography/charli6.png?w=512 512w"
+                            sizes="auto,453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/troye3.png"
+                            srcSet="/photography/troye3.png 960w, /photography/troye3.png?w=512 512w"
+                            sizes="453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/troye4.png"
+                            srcSet="/photography/troye4.png 960w, /photography/troye4.png?w=512 512w"
+                            sizes="453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/troye5.png"
+                            srcSet="/photography/troye5.png 964w, /photography/troye5.png?w=512 512w"
+                            sizes="453.0448913574219px" />
+                    </div>
+                    <div class="css-n6pdts css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/troye6.png"
+                            srcSet="/photography/troye6.png 688w, //photography/troye6.png?w=512 512w"
+                            sizes="auto,453.0448913574219px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli7.png"
+                            srcSet="/photography/charli7.png 870w, /photography/charli7.png?w=256 256w, /photography/charli7.png?w=512 512w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli8.png"
+                            srcSet="/photography/charli8.png 838w, /photography/charli8.png?w=256 256w, /photography/charli8.png?w=512 512w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli9.png"
+                            srcSet="/photography/charli9.png 844w, /photography/charli9.png?h=256 255w, /photography/charli9.png?h=512 509w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli10.png"
+                            srcSet="/photography/charli10.png 872w, /photography/charli10.png?h=256 256w, /photography/charli10.png?h=512 511w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/sabrina1.png"
+                            srcSet="/photography/sabrina1.png 772w, /photography/sabrina1.png?w=256 256w, /photography/sabrina1.png?w=512 512w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli11.png"
+                            srcSet="/photography/charli11.png 838w, /photography/charli11.png?w=256 256w, /photography/charli11.png?w=512 512w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/sabrina2.png"
+                            srcSet="/photography/sabrina2.png 768w, /photography/sabrina2.png?h=256 256w, /photography/sabrina2.png?h=512 511w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli12.png"
+                            srcSet="/photography/charli12.png 840w, /photography/charli12.png?w=256 256w, /photography/charli12.png?w=512 512w"
+                            sizes="254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli13.png"
+                            srcSet="/photography/charli13.png 838w, /photography/charli13.png?w=256 256w, /photography/charli13.png?w=512 512w"
+                            sizes="254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli14.png"
+                            srcSet="/photography/charli14.png 888w, /photography/charli14.png?w=256 256w, /photography/charli14.png?w=512 512w"
+                            sizes="254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli15.png"
+                            srcSet="/photography/charli15.png 836w, /photography/charli15.png?h=256 256w, /photography/charli15.png?h=512 511w"
+                            sizes="254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli16.png"
+                            srcSet="/photography/charli16.png 882w, /photography/charli16.png?w=256 256w, /photography/charli16.png?w=512 512w"
+                            sizes="254.83773803710938px" />
+                    </div>
+                    <div class="css-1tfwfz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli17.png"
+                            srcSet="/photography/charli17.png 888w, /photography/charli17.png?w=256 256w, /photography/charli17.png?w=512 512w"
+                            sizes="auto,254.83773803710938px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli18.png"
+                            srcSet="/photography/charli18.png 688w, /photography/charli18.png?h=512 349w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli19.png"
+                            srcSet="/photography/charli19.png 358w, /photography/charli19.png?h=512 339w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli20.png"
+                            srcSet="/photography/charli20.png 360w, /photography/charli20.png?h=512 342w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli21.png"
+                            srcSet="/photography/charli21.png 508w, /photography/charli21.png?h=512 384w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli22.png"
+                            srcSet="/photography/charli22.png 698w, /photography/charli22.png?h=512 343w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli23.png"
+                            srcSet="/photography/charli23.png 754w, /photography/charli23.png?h=512 364w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli24.png"
+                            srcSet="/photography/charli24.png 586w, /photography/charli24.png?h=512 364w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                    <div class="css-cp3kqz css-wc1msa">
+                        <img alt="" loading="lazy"
+                            class="css-ez8men css-9unj7x css-trglf0 css-trglf0 css-r0azwh css-9unj7x"
+                            src="/photography/charli25.png"
+                            srcSet="/photography/charli25.png 624w, /photography/charli25.png?h=512 342w"
+                            sizes="auto,254.8377685546875px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="bottom-right">
+        <a href="index.html">home</a>
         <a href="about.html">about</a>
         <a href="social.html">social content</a>
-        <a href="photography.html">photography</a>
+        <a href="photography.html"><b>photography</b></a>
         <a href="video.html">video</a>
-
+    
         <div class="socials">
             <a href="https://www.instagram.com/terrencefoconnor/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@terrencefoconnor?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
             <a href="https://x.com/tf_oconnor?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-
+    
         <a class="contact-btn" href="mailto:terrence@goodworldco.com">contact</a>
     </div>
+    <noscript data-nosnippet>
+        <main
+            style="height: 100vh; width: 100vw; background-color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <h1 style="font-size: 24px; padding: 8px; color: black">This site requires JavaScript
+            </h1>
+            <p style="font-size: 16px; padding: 8px; color: #00000080">To view this website, enable JavaScript in your
+                browser settings and reload the page.</p>
+            <form style="margin-top: 12px;" action="">
+                <button type="submit"
+                    style="font-size: 14px; color: black; border: 1px solid #0000001a; border-radius: 5px; width: 256px; height: 32px;">Reload
+                    page
+                </button>
+            </form>
+        </main>
+    </noscript>
 </body>
 
 </html>
